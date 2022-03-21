@@ -32,9 +32,9 @@ export default class MobileItem extends Component {
                 Xem chi tiết
               </button>
               <button
-                // onClick={() => {
-                //   this.props.handleThemSanPham(this.props.data);
-                // }}
+                onClick={() => {
+                  this.props.handleAddToCart(this.props.mobileItem);
+                }}
                 className="btn btn-danger"
               >
                 Thêm giỏ hàng

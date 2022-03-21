@@ -11,6 +11,7 @@ export default class MobileList extends Component {
               mobileItem={mobileItem}
               key={index}
               handleShowDetailProduct={this.props.handleShowDetailProduct}
+              handleAddToCart={this.props.handleAddToCart}
             />
           );
         })}

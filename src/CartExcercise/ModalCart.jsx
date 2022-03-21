@@ -6,7 +6,6 @@ export default class ModalCart extends Component {
     isModalVisible: false,
   };
   showModal = () => {
-    console.log("yes");
     this.setState({ isModalVisible: true });
   };
 
@@ -30,25 +29,25 @@ export default class ModalCart extends Component {
           <td>{item.name}</td>
           <td>
             <button
-              // onClick={() => {
-              //   this.props.handleThayDoiSoLuong(item.id * -1);
-              // }}
+              onClick={() => {
+                this.props.handleChangeQuantity(item.id * -1);
+              }}
               className="btn btn-danger mr-2"
             >
               -
             </button>
-            {item.soluong}
+            {item.quantity}
             <button
-              // onClick={() => {
-              //   this.props.handleThayDoiSoLuong(sp.id);
-              // }}
+              onClick={() => {
+                this.props.handleChangeQuantity(item.id);
+              }}
               className="btn btn-primary ml-2"
             >
               +
             </button>
           </td>
           <td>{item.price.toLocaleString()}</td>
-          <td>{(item.soluong * item.price).toLocaleString()}</td>
+          <td>{(item.quantity * item.price).toLocaleString()}</td>
         </tr>
       );
     });
